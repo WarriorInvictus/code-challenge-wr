@@ -1,0 +1,42 @@
+<h2>MobileappRedirect</h2>
+
+<script>
+
+    class NavigatorSniffer {
+
+        constructor(appleStoreUrl, googlePlayStoreUrl) {
+            this.client = window.navigator.userAgent || navigator.vendor || window.opera;
+            this.appleStore = appleStoreUrl ? appleStoreUrl : "https://apps.apple.com/us/app/tidal-music/id913943275";
+            this.googlePlayStore = googlePlayStoreUrl ? googlePlayStoreUrl : "https://play.google.com/store/apps/details?id=com.aspiro.tidal"
+        }
+
+        init() {
+
+            this.storeRedirect()
+        }
+
+        checkClient() {
+            if (/android/i.test(this.client)) return "Android";
+            if (/iPad|iPhone|iPod/.test(this.client) && !window.MSStream) return "iOS";
+        }
+
+        storeRedirect() {
+
+            switch (this.checkClient()) {
+                case 'iOS':
+                    window.location.replace(this.appleStore);
+                    break;
+                case 'Android':
+                    window.location.replace(this.googlePlayStore);
+                    break;
+                default:
+                    window.location.replace('http://stackoverflow.com')
+
+            }
+        }
+    }
+
+    const navigatorSniffer = new NavigatorSniffer();
+    navigatorSniffer.init();
+
+</script>
