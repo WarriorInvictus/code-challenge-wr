@@ -1,0 +1,23 @@
+{
+  "name": "code-challenge-wr",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WarriorInvictus/code-challenge-wr.git"
+  },
+  "author": "wr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WarriorInvictus/code-challenge-wr/issues"
+  },
+  "homepage": "https://github.com/WarriorInvictus/code-challenge-wr#readme",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  }
+}
